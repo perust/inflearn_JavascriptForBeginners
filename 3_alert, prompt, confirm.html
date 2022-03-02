@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>alert, prompt, confirm</title>
+		<script>
+			//alert
+
+			// prompt
+			const name = prompt('예약일을 입력하세요.', '2022-10-'); // 두 개의 인수를 받을 수 있다. 첫번째 값은 메세지, 두번째 값음 디폴트값
+
+			//confirm
+			const isAdult = confirm('당신은 성인입니까?');
+			console.log(isAdult);
+			/*
+			확인과 취소 버튼이 있다. 확인을 누르면 true, 취소를 누르면 false 가 반환된다.
+			*/
+
+			/*
+			단점
+			1. 창이 떠있는 동안 스크립트 일시정지.
+			2. 스타일링 불가능.
+			
+			*/
+		</script>
+	</head>
+	<body></body>
+</html>

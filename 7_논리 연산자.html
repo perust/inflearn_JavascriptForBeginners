@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>논리 연산자(AND, OR, NOT)</title>
+		<script>
+			/*
+			|| (OR)
+			&& (AND)
+			! (NOT)
+			OR 는 첫번째 true 를 발견하는 즉시 평가를 멈춘다.
+			AND 는 첫번째 false 를 발견하는 즉시 평가를 멈춘다.
+			*/
+			const name = 'Mike';
+			const age = 30;
+
+			if (name === 'Tom' || age > 19) {
+				console.log('통과');
+			}
+
+			if (name === 'Mike' && age > 19) {
+				console.log('통과');
+			} else {
+				console.log('돌아가.');
+			}
+
+			const age = prompt('나이가?');
+			const isAdult = age > 19;
+
+			if (!isAdult) {
+				console.log('돌아가..');
+			}
+
+			// 우선 순위
+			// 남자이고, 이름이 Mike 이거나 성인이면 통과
+			const gender = 'F';
+			const name = 'Jane';
+			const isAdult = true;
+
+			if ((gender === 'M' && name === 'Mike') || isAdult) {
+				console.log('통과');
+			} else {
+				console.log('돌아가');
+			}
+			// AND 가 OR 보다 우선순위이다.
+
+			if (gender === 'M' && (name === 'Mike' || isAdult)) {
+				console.log('통과');
+			} else {
+				console.log('돌아가');
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

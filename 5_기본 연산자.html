@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>5. 기본 연산자</title>
+		<script>
+			/*
+			연산자
+			+ - * / %
+			홀수 : X % 2 = 1
+			짝수 : Y % 2 = 0
+			어떤 값이 들어와도 5를 넘기면 안돼 : X % 5 = 0 ~ 4 사이의 값만 반환
+			*/
+			// 거듭제곱
+			const num = 2 ** 3;
+			console.log(num); // 8
+
+			// 연산자 줄여서 쓰기
+			let num = 10;
+			//num = num + 5;
+			num += 5; // 위의 식과 동일, + - % 등의 연산식도 줄여서 표현할 수 있다.
+
+			console.log(num);
+
+			//증가 연산자, 감소 연산자
+			let num = 10;
+			let result = num++; // 뒤에 적으면 증가시키기 전의 값을 result에 저장
+			let result2 = ++num; // 앞에 적으면 증가시킨 값을 result2에 저장
+
+			console.log(result);
+			/*
+			
+			*/
+		</script>
+	</head>
+	<body></body>
+</html>

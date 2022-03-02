@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			/*
+				String() -> 문자형으로 변환
+
+				Number() -> 숫자형으로 변환
+					true 와 false 를 number 로 변환하면 1, 0 으로 변환된다.	
+					Number(null) = 0   (프롬프트에서 취소를 누르면 null 값이 들어간다.)
+					Number(undefined) = NaN 
+
+				Boolean() -> 불린형으로 변환
+					0, '', null, undefined, NaN -> false 로 반환된다.
+					Boolean(0) = false   (0값)
+					Boolean('0') = true  (0 문자열)
+					Boolean('') = false  (빈 문자열)
+					Boolean(' ') = true  (공백 포함)
+			*/
+			const mathScore = prompt('수학 몇점?');
+			const engScore = prompt('영어 몇점?');
+			const result = (mathScore + engScore) / 2;
+
+			console.log(result);
+			/*
+			프롬프트로 입력 받은 값은 무조건 문자형이다.
+			문자형으로 더해진 다음, 자동 형변환 되어 2로 나누어진다.
+			항상 의도를 가지고 형변환을 해주도록 한다.
+			명시적 형변환
+			*/
+			/*
+
+			
+			*/
+		</script>
+	</head>
+	<body></body>
+</html>
