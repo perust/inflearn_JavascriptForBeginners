@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>9.switch문</title>
+		<script>
+			/*
+				switch(평가){
+					case A :
+					// A일때 코드
+					case B :
+					// B일때 코드
+					...
+				}
+
+				if(평가 == A){
+					// A일때 코드
+				} else if(평가 == B){
+					// B일때 코드
+				}
+
+				두 개의 코드는 동일하다.
+				break 문을 만나면 switch문을 빠져나간다.
+			*/
+			/*
+			 사과: 100원
+			 바나나: 200원
+			 키위: 300원
+			 멜론: 500원
+			 수박: 500원
+			 사고싶은 과일을 물어보고 가격 알려주기
+			*/
+			let fruit = prompt('무슨 과일을 사고 싶나요?');
+
+			switch (fruit) {
+				case '사과':
+					console.log('100원 입니다;');
+					break;
+				case '바나나':
+					console.log('200원 입니다;');
+					break;
+				case '키위':
+					console.log('300원 입니다;');
+					break;
+				case '멜론':
+				case '수박':
+					console.log('500원 입니다;');
+					break;
+				// if 문에서는 else 를 사용하는데
+				default:
+					console.log('그런 과일은 없습니다.');
+			}
+		</script>
+	</head>
+	<body></body>
+</html>
