@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>함수(function)의 기초</title>
+		<script>
+			function sayHello(name) {
+				console.log(`Hello, ${name}`);
+			}
+
+			sayHello('Mike');
+
+			// 함수 작성
+			//매개변수는 없어도 되고 쉼표로 구분해서 여러개를 넣어도 됩니다.
+			function showError() {
+				alert('에러가 발생했습니다. 새로고침 해주세요.');
+			}
+
+			showError();
+			// 매개변수가 있는 함수
+			function sayHello(name) {
+				const msg = `Hello, ${name}`;
+				console.log(msg);
+			}
+
+			sayHellow('Mike');
+			// 함수를 만드는 이유는 매개변수를 줄여줍니다.
+			function sayHello(name) {
+				console.log(name);
+				let msg = `Hello`;
+				if (name) {
+					msg = `Hello, ${name}`;
+				} // name에 false(undefined) 값이 들어오면 오면 msg 값을 그대로 출력한다
+				console.log(msg);
+			}
+			sayHello('Mike');
+
+			// 코드 개선
+
+			function sayHello(name) {
+				let msg = `Hello`; //지역변수인데, 함수 안에서만 사용할 수 있다.
+				if (name) {
+					// msg += ', ' + name;
+					msg += `, ${name}`;
+				}
+				console.log(msg);
+			}
+
+			sayHello('Mike');
+			/*
+				먼저 const 로 선언하고, 바뀔 가능성이 있다면 let 으로 바꿔주는 습관을 들이는게 좋습니다.
+			*/
+
+			let msg = 'Hello'; //외부에서 사용하고 싶다면 바깥으로 빼줘야한다. 이렇게 어디서나 접근할 수 있는 함수를 전역 변수(global varable) 이라고 한다.
+			console.log('함수 호출 전');
+			console.log(msg);
+
+			function sayHello(name) {
+				if (name) {
+					// msg += ', ' + name;
+					msg += `, ${name}`;
+				}
+				console.log('함수 내부');
+				// 지역 변수 (local varable)
+				console.log(msg);
+			}
+
+			sayHello('Mike');
+			console.log('함수 호출 후');
+			console.log(msg);
+
+			// 전역 변수와 지역 변수
+			let msg = 'welcome'; // 전역 변수
+			console.log(msg);
+
+			function sayHello(name) {
+				let msg = 'Hello'; // 함수 내부에서 지역 변수로 선언할 수 있고, 서로 간섭을 받지 않는다.
+				console.log(msg + ' ' + name);
+			}
+
+			sayHello('Mike');
+			console.log(msg);
+
+			let name = 'Mike';
+
+			function sayHello(name) {
+				console.log(name);
+			}
+
+			sayHello(); // undefined 출력
+			sayHello('Jane');
+			/*
+			매개변수로 받은 값은 복사된 후, 함수의 지역변수가 됩니다. 전체 서비스에서 공통으로 바라봐야하는 변수를 제외하고는 지역변수를 쓰는 습관을 들이는게 좋습니다.
+			전역변수가 많아지면 관리가 힘들어집니다.
+			함수에 특화된 지역변수를 가급적 사용하자.
+			*/
+
+			// OR
+			function sayHello(name) {
+				let newName = name || 'friend';
+				let msg = `Hello, ${newName}`;
+				console.log('msg');
+			}
+
+			sayHello();
+			sayHello('Jane');
+
+			// OR - 코드 개선
+			function sayHello(name = 'friend') {
+				let msg = `Hello, ${name}`;
+				console.log('msg');
+			}
+
+			sayHello();
+			sayHello('Jane');
+
+			// return 으로 값 변환
+			function add(num1, num2) {
+				return num1 + num2; // return을 적어주면 return 오른쪽에 있는 값을 반환합니다.
+			}
+
+			const result = add(2, 3);
+			console.log(result);
+
+			// return 문이 없는 함수도 undefined 를 반환합니다.
+			function showError() {
+				alert('에러가 발생했습니다.');
+				return;
+				//혹은 return 만 있어도 undefined 를 반환합니다.
+				// 참고로 return 문이 있으면, 그 즉시 오른쪽에 있는 값을 반환하고 종료합니다.
+				alert('이 코드는 절대 실행되지 않습니다.');
+			}
+			const result = showError();
+			console.log(result);
+
+			/*
+			정리
+			함수(function)
+
+			- 한번에 한 작업에 집중
+			함수는 한번에 한 작업에 집중하는 것이 좋습니다.
+			함수가 여러 작업을 진행하면, 함수를 더 잘게 나눠서 진행하는 것이 좋습니다.
+
+			- 읽기 쉽고 어떤 동작인지 알 수 있게 네이밍
+			showError // 에러를 보여줌
+			getName // 이름을 얻어옴
+			createUserData // 유저데이터 생성
+			checkLogin // 로그인 여부 체크
+			*/
+		</script>
+	</head>
+	<body></body>
+</html>
