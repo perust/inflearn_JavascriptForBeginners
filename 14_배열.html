@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>14. 배열(Array)</title>
+		<script>
+			/*
+				배열(Array): 순서가 있는 리스트
+
+				1번에 철수
+				2번에 영희
+				...
+				30번에 영수
+			*/
+			//이것을 코드로 표현하면
+			let students = ['철수', '영희', ...'영수'];
+			//배열을 탐색할 때는 고유번호(index) 를 사용한다. 0부터 시작한다.
+			console.log(students[0]); // 철수
+			console.log(students[1]); // 영희
+			console.log(students[29]); // 영수
+
+			// 같은 방식으로 수정도 할 수 있다.
+			students[0] = '민정';
+			console.log(students); // ['민정', '영희', ... ] 첫번째 학생이 민정으로 바뀐다.
+
+			/*
+			배열의 특징
+			배열은 문자 뿐만 아니라 숫자, 객체, 함수 등도 포함할 수 있다.
+			*/
+			let arr = [
+				'민수',
+				3,
+				false,
+				{
+					name: 'Mike',
+					age: 30,
+				},
+				function () {
+					console.log('TEST');
+				},
+			];
+			// length : 배열의 길이를 구할 수 있다. 그 배열이 가진 메소드 갯수를 반환한다.
+			students.length; // 30
+
+			// push() : 배열 끝에 요소를 추가
+			let days = ['월', '화', '수'];
+			days.push('목');
+			console.log(days); // ['월', '화', '수', '목']
+
+			// pop() : 배열 끝 요소 제거
+			let days0 = ['월', '화', '수'];
+			days0.pop();
+			console.log(days0); // ['월', '화']
+
+			// unshift, shift : 배열 앞에서 동작하여 추가/제거
+			// 추가
+			days.unshift('일');
+			console.log(days); // ['일', '월', '화', '수']
+
+			//제거
+			days.shift();
+			console.log(days); // ['월', '화', '수']
+
+			// push 와 unshift 는 여러 요소를 한번에 추가할 수도 있다.
+			days.unshift('금', '토', '일');
+
+			// 반복문 for
+			// 배열을 쓰는 가장 큰 이유 중 하나는 반복을 위해서이다.
+			// length 를 통해서 배열의 길이를 알고 있으므로, for 문을 쓸 수 있다.
+			// let days = ['월', '화', '수'];
+			for (let index = 0; index < dats.length; index++) {
+				console.log(days[index]); // index는 0 ~ 2 까지 반복한다.
+			}
+
+			// 반복문 : for ... of
+			/*
+			객체를 순회하는 for in 과 햇갈리지 않도록 주의
+			배열도 객체를 순회하기 때문에 for in 을 쓸수는 있지만 장점보다 단점이 더 많다.
+
+			배열 days 를 돌면서 day 로 접근할 수 있다.
+			for 문 보다는 간단하지만, index 를 못 얻는다는 단점이 있다.
+			 */
+			// let days = ['월', '화', '수'];
+			for (let day of days) {
+				console.log(day);
+			}
+
+			// 코드 예제
+
+			// array
+			let dayss = ['mon', 'tue', 'wed'];
+
+			console.log(dayss[1]); // tue
+
+			dayss[1] = '화요일';
+			console.log(dayss); // ["mon", "화요일", "wed"]
+
+			console.log(dayss.length); // 3
+
+			dayss.push('thu');
+			console.log(dayss);
+			['mon', '화요일', 'wed', 'thu'];
+
+			dayss.unshift('sun'); // 앞에 sun 추가
+
+			// for 반복문
+			for (let index = 0; index < dayss.length; index++) {
+				console.log(dayss[index]);
+			}
+
+			// for of 반복문
+			for (let day of dayss) {
+				// day 는 배열의 요소 이름으로 아무 이름이나 써도 된다. x, a, 등등
+				console.log(day);
+			}
+		</script>
+	</head>
+	<body></body>
+</html>
