@@ -15,7 +15,7 @@
 			age: 33
 			해당 정보를 가지고 객체를 만들어보자
 			*/
-			const superman = {
+			var superman = {
 				name: 'clark',
 				age: 33,
 			};
@@ -32,10 +32,10 @@
 			delete superman.hairColor;
 
 			// Object - 단축 프로퍼티
-			const name = 'clark';
-			const age = 33;
+			var name = 'clark';
+			var age = 33;
 
-			const superman = {
+			var superman = {
 				name, // name : name 과 같다.
 				age, // age : age 와 같다.
 				gender: 'male',
@@ -43,7 +43,7 @@
 			// 이렇게 작성할 수 있다.
 
 			// Object - 프로퍼티 존재 여부 확인
-			const superman = {
+			var superman = {
 				name: 'clark',
 				age: 33,
 			};
@@ -55,14 +55,14 @@
 
 			// for ... in 반복문
 			// 객체를 순회하면서 값을 받아올 수 있다.
-			for (let key in superman) {
+			for (var key in superman) {
 				console.log(key);
 				console.log(superman[key]);
 			}
 
 			// 실습
 			// 객체
-			const superman = {
+			var superman = {
 				name: 'clark',
 				age: 30,
 			};
@@ -86,7 +86,7 @@
 				};
 			}
 
-			const Mike = makeObject('Mike', 30);
+			var Mike = makeObject('Mike', 30);
 			console.log(Mike);
 
 			//축약형
@@ -98,7 +98,7 @@
 				};
 			}
 
-			const Mike0 = makeObject('Mike', 30);
+			var Mike0 = makeObject('Mike', 30);
 			console.log(Mike);
 
 			// in 을 사용해 프로퍼티가 존재하는지 확인하기
@@ -114,11 +114,11 @@
 				return true;
 			}
 
-			const Mike2 = {
+			var Mike2 = {
 				name: 'Mike',
 				age: 30,
 			};
-			const Jane = {
+			var Jane = {
 				name: 'Jane',
 			};
 
@@ -140,7 +140,7 @@
 			console.log(isAdult(Jane));
 
 			// 객체 for ... in
-			const Mike1 = {
+			var Mike1 = {
 				name: 'Mike',
 				age: 30,
 			};
