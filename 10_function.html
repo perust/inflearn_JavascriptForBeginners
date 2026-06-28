@@ -21,15 +21,15 @@
 			showError();
 			// 매개변수가 있는 함수
 			function sayHello(name) {
-				const msg = `Hello, ${name}`;
+				var msg = `Hello, ${name}`;
 				console.log(msg);
 			}
 
-			sayHellow('Mike');
+			sayHello('Mike');
 			// 함수를 만드는 이유는 매개변수를 줄여줍니다.
 			function sayHello(name) {
 				console.log(name);
-				let msg = `Hello`;
+				var msg = `Hello`;
 				if (name) {
 					msg = `Hello, ${name}`;
 				} // name에 false(undefined) 값이 들어오면 오면 msg 값을 그대로 출력한다
@@ -40,7 +40,7 @@
 			// 코드 개선
 
 			function sayHello(name) {
-				let msg = `Hello`; //지역변수인데, 함수 안에서만 사용할 수 있다.
+				var msg = `Hello`; //지역변수인데, 함수 안에서만 사용할 수 있다.
 				if (name) {
 					// msg += ', ' + name;
 					msg += `, ${name}`;
@@ -50,10 +50,10 @@
 
 			sayHello('Mike');
 			/*
-				먼저 const 로 선언하고, 바뀔 가능성이 있다면 let 으로 바꿔주는 습관을 들이는게 좋습니다.
+				먼저 var 로 선언하고, 바뀔 가능성이 있다면 var 으로 바꿔주는 습관을 들이는게 좋습니다.
 			*/
 
-			let msg = 'Hello'; //외부에서 사용하고 싶다면 바깥으로 빼줘야한다. 이렇게 어디서나 접근할 수 있는 함수를 전역 변수(global varable) 이라고 한다.
+			var msg = 'Hello'; //외부에서 사용하고 싶다면 바깥으로 빼줘야한다. 이렇게 어디서나 접근할 수 있는 함수를 전역 변수(global varable) 이라고 한다.
 			console.log('함수 호출 전');
 			console.log(msg);
 
@@ -72,18 +72,18 @@
 			console.log(msg);
 
 			// 전역 변수와 지역 변수
-			let msg = 'welcome'; // 전역 변수
+			var msg = 'welcome'; // 전역 변수
 			console.log(msg);
 
 			function sayHello(name) {
-				let msg = 'Hello'; // 함수 내부에서 지역 변수로 선언할 수 있고, 서로 간섭을 받지 않는다.
+				var msg = 'Hello'; // 함수 내부에서 지역 변수로 선언할 수 있고, 서로 간섭을 받지 않는다.
 				console.log(msg + ' ' + name);
 			}
 
 			sayHello('Mike');
 			console.log(msg);
 
-			let name = 'Mike';
+			var name = 'Mike';
 
 			function sayHello(name) {
 				console.log(name);
@@ -99,9 +99,9 @@
 
 			// OR
 			function sayHello(name) {
-				let newName = name || 'friend';
-				let msg = `Hello, ${newName}`;
-				console.log('msg');
+				var newName = name || 'friend';
+				var msg = `Hello, ${newName}`;
+				console.log(msg);
 			}
 
 			sayHello();
@@ -109,8 +109,8 @@
 
 			// OR - 코드 개선
 			function sayHello(name = 'friend') {
-				let msg = `Hello, ${name}`;
-				console.log('msg');
+				var msg = `Hello, ${name}`;
+				console.log(msg);
 			}
 
 			sayHello();
@@ -121,7 +121,7 @@
 				return num1 + num2; // return을 적어주면 return 오른쪽에 있는 값을 반환합니다.
 			}
 
-			const result = add(2, 3);
+			var result = add(2, 3);
 			console.log(result);
 
 			// return 문이 없는 함수도 undefined 를 반환합니다.
@@ -132,7 +132,7 @@
 				// 참고로 return 문이 있으면, 그 즉시 오른쪽에 있는 값을 반환하고 종료합니다.
 				alert('이 코드는 절대 실행되지 않습니다.');
 			}
-			const result = showError();
+			var result = showError();
 			console.log(result);
 
 			/*
